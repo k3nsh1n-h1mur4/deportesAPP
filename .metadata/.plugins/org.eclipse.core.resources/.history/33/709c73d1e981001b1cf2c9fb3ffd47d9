@@ -1,0 +1,33 @@
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class Login implements ActionListener{
+	private String username;
+
+	//Constructor
+	public Login() {	
+	}
+	
+	public void LogIn(String username) {
+		System.out.println(this.username);
+			
+	}
+	
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	
+	public String getUsername() {
+		return this.username;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent ev) {
+		// TODO Auto-generated method stub
+		System.out.println(this.username);
+		LogIn(this.username);
+	}
+	
+	
+	
+}

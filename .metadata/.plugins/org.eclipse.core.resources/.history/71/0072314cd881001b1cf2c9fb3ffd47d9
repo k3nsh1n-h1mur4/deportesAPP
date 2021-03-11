@@ -1,0 +1,26 @@
+import java.awt.*;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+
+
+
+public class example {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		JFrame jf = new JFrame("JFrame example");
+		JButton b = new JButton();
+		b.setText("Apretar");
+		
+		jf.add(b);
+		
+		
+		jf.setSize()
+		jf.setLayout(null);
+		jf.setVisible(true);
+		
+
+	}
+
+}

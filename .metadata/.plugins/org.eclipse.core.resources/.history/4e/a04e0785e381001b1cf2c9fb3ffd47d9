@@ -1,0 +1,49 @@
+import java.awt.*;
+import javax.swing.*;
+
+
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+
+
+
+public class example {
+
+	public static void main(String[] args) throws ClassNotFoundException {
+		// TODO Auto-generated method stub
+		JFrame jf = new JFrame("LogIn");
+		JLabel lbusername = new JLabel();
+		lbusername.setText("Username: ");
+		lbusername.setBounds(20, 50, 150, 20);
+		JTextField txUsername = new JTextField();
+		txUsername.setBounds(100, 50, 150, 20);
+		
+		JLabel lbpassword = new JLabel();
+		lbpassword.setText("Password: ");
+		lbpassword.setBounds(20, 100, 150, 20);
+		JTextField txPassword = new JTextField();
+		txPassword.setBounds(100, 100, 150, 20);
+		JButton btn = new JButton();
+		btn.setText("Entrar");
+		btn.setBounds(60, 150, 80, 30);
+		
+		MysqlConnector my = new MysqlConnector();
+		my.DBConnection();
+		//System.out.println(my.DBConnection());
+		
+		jf.add(lbusername);
+		jf.add(txUsername);
+		jf.add(lbpassword);
+		jf.add(txPassword);
+		jf.add(btn);
+		jf.setSize(400, 400);
+		jf.setLayout(null);
+		jf.setVisible(true);
+		
+
+	}
+
+}

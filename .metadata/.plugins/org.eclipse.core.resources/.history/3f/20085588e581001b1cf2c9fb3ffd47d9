@@ -1,0 +1,14 @@
+
+public class Login {
+	//Constructor
+	public Login() {	
+	}
+	
+	public void LogIn(String username) {
+		MysqlConnector my = new Mysqlonnector();
+		my.DBConnection();
+		
+	}
+	
+	
+}
