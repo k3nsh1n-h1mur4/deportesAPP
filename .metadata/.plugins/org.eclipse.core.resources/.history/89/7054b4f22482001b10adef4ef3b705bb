@@ -49,19 +49,16 @@ public class example{
 				username = txUsername.getText();
 				char[] pwd = txPassword.getPassword();
 				
-				
-				
-				Login lg = new Login();
-				password = lg.cvPassword(pwd);
 				InsertUsers iu = new InsertUsers();
 				try {
-					
 					String p = iu.EncryptedPassword(password);
-					System.out.println(p);
 				} catch (NoSuchAlgorithmException e2) {
 					// TODO Auto-generated catch block
 					e2.printStackTrace();
 				}
+				
+				Login lg = new Login();
+				password = lg.cvPassword(pwd);
 				try {
 					lg.LogIn(username, password);
 				} catch (ClassNotFoundException e1) {

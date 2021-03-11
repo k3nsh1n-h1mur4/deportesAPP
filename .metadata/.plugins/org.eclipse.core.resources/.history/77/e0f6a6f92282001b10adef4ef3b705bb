@@ -11,14 +11,14 @@ public class RegisterForm {
 		lbuser.setText("Usuario: ");
 		lbuser.setBounds(20, 50, 150, 20);
 		JTextField txuser = new JTextField();
-		//txuser.setText("Usuario: ");
+		txuser.setText("Usuario: ");
 		txuser.setBounds(100, 50, 150, 20);
 		
 		JLabel lbpassword = new JLabel();
-		lbpassword.setText("Password: ");
+		lbpassword.setText("Usuario: ");
 		lbpassword.setBounds(20, 100, 150, 20);
 		JTextField txpassword = new JTextField();
-		//txpassword.setText("Password: ");
+		txpassword.setText("Usuario: ");
 		txpassword.setBounds(100, 100, 150, 20);
 		
 		JButton btnRegister = new JButton();

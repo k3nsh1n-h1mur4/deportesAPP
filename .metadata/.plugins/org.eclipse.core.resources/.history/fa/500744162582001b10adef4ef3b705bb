@@ -57,7 +57,6 @@ public class example{
 				try {
 					
 					String p = iu.EncryptedPassword(password);
-					System.out.println(p);
 				} catch (NoSuchAlgorithmException e2) {
 					// TODO Auto-generated catch block
 					e2.printStackTrace();

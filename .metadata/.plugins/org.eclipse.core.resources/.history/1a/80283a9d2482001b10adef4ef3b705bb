@@ -2,7 +2,6 @@ import java.awt.*;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.security.NoSuchAlgorithmException;
 
 import javax.swing.*;
 
@@ -49,19 +48,8 @@ public class example{
 				username = txUsername.getText();
 				char[] pwd = txPassword.getPassword();
 				
-				
-				
 				Login lg = new Login();
 				password = lg.cvPassword(pwd);
-				InsertUsers iu = new InsertUsers();
-				try {
-					
-					String p = iu.EncryptedPassword(password);
-					System.out.println(p);
-				} catch (NoSuchAlgorithmException e2) {
-					// TODO Auto-generated catch block
-					e2.printStackTrace();
-				}
 				try {
 					lg.LogIn(username, password);
 				} catch (ClassNotFoundException e1) {
