@@ -1,0 +1,143 @@
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.security.NoSuchAlgorithmException;
+import java.sql.*;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import javax.swing.JPanel;
+
+public class Login extends JFrame{
+	public String username;
+	public String password;
+	public JTextField txUsername;
+	public JPasswordField txPassword;
+	
+	public Login() {
+		JFrame jf = new JFrame("LogIn");
+		JPanel jp = new JPanel();
+		
+		JLabel lbusername = new JLabel();
+		lbusername.setText("Username: ");
+		lbusername.setBounds(20, 50, 150, 20);
+		JTextField txUsername = new JTextField();
+		txUsername.setBounds(100, 50, 150, 20);
+		
+		JLabel lbpassword = new JLabel();
+		lbpassword.setText("Password: ");
+		lbpassword.setBounds(20, 100, 150, 20);
+		JPasswordField txPassword = new JPasswordField();
+		txPassword.setBounds(100, 100, 150, 20);
+		JButton btn = new JButton();
+		btn.setText("Entrar");
+		btn.setBounds(60, 150, 80, 30);
+		
+		jf.add(lbusername);
+		jf.add(txUsername);
+		jf.add(lbpassword);
+		jf.add(txPassword);
+		jf.add(btn);
+		jf.setSize(400, 400);
+		jf.setLayout(null);
+		jf.getContentPane().add(jp);
+		jp.setBackground(Color.CYAN);
+		jf.setVisible(true);
+		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		ActionListener al = new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				username = txUsername.getText();
+				char[] pwd = txPassword.getPassword();
+				password = cvPassword(pwd);
+				
+				System.out.println(username);
+				System.out.println(password);
+				
+				
+			}
+			
+		};
+		btn.addActionListener(al);		
+				
+	}
+	
+	
+
+	public void LogIn(String username, String password) throws ClassNotFoundException{
+		String user1 = null;
+		String pwd = null;
+		
+		username = txUsername.getText();
+		password = pwd;
+		
+		
+		String SQL = "SELECT * FROM users WHERE username = ?";
+		System.out.println(username);
+		System.out.printf("hash: %s", password.hashCode());
+		
+		MysqlConnector my = new MysqlConnector();
+		Connection conn = my.DBConnection();
+		//System.out.println(conn.getClass());
+		try {
+			if(username.isEmpty() && password.isEmpty()) {
+				System.out.println("Usuario o Contraseña en blanco");
+				System.exit(1);
+			}else {
+				PreparedStatement pstm = conn.prepareStatement(SQL);
+				pstm.setString(1, username);
+				
+				
+				ResultSet rs = pstm.executeQuery();
+				while(rs.next()) {
+					user1 = rs.getString("username");
+					pwd = rs.getString("password");
+					if(username.equals(user1) && password.equals(pwd)) {
+						System.out.println("Usuario válido");
+					}else {
+						System.out.println("Usuario o contraseña inválidos");
+						System.exit(1);
+					}
+				}
+				//System.out.println(pstm);
+				//System.out.println(user1);
+				//System.out.println(pwd);
+			}
+			
+		}catch(SQLException e) {
+			System.out.printf("Error: %s", e.getMessage());
+		}
+		
+		
+		
+	}
+	
+	public String cvPassword(char[] password) {
+		String pwd = new String(password);
+		//System.out.println(pwd);
+		return pwd;
+	}
+	
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	
+	public String getUsername() {
+		return this.username;
+	}
+
+	public Integer EncryptPassword(String password) {
+		int encrypted_password;
+		this.password = password;
+		encrypted_password = password.hashCode();
+		return encrypted_password;
+	}
+	
+	
+	
+}

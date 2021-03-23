@@ -1,0 +1,58 @@
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.*;
+
+
+public class RegisterForm implements ActionListener{
+	
+	
+
+	public RegisterForm() {
+		JFrame jf = new JFrame();
+		jf.setTitle("Registro Usuarios");
+		JLabel lbuser = new JLabel();
+		lbuser.setText("Usuario: ");
+		lbuser.setBounds(20, 50, 150, 20);
+		JTextField txuser = new JTextField();
+		//txuser.setText("Usuario: ");
+		txuser.setBounds(100, 50, 150, 20);
+		
+		JLabel lbpassword = new JLabel();
+		lbpassword.setText("Password: ");
+		lbpassword.setBounds(20, 100, 150, 20);
+		JTextField txpassword = new JTextField();
+		//txpassword.setText("Password: ");
+		txpassword.setBounds(100, 100, 150, 20);
+		
+		JButton btnRegister = new JButton();
+		btnRegister.setText("Registrar Usuario");
+		btnRegister.setBounds(60, 150, 200, 30);
+		btnRegister.addActionListener(this);
+		
+		
+		
+		jf.add(lbuser);
+		jf.add(txuser);
+		jf.add(lbpassword);
+		jf.add(txpassword);
+		jf.add(btnRegister);
+		jf.setLocation(400, 400);
+		jf.setLayout(null);
+		jf.setSize(400, 400);
+		jf.setVisible(true);
+	}
+	
+	
+	public void actionPerformed(ActionEvent e) {
+		Object btnRegister = null;
+		if(e.getSource() == btnRegister){
+			System.out.println("click");
+		}
+	}
+
+
+	
+	
+}

@@ -1,0 +1,79 @@
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.*;
+
+
+public class RegisterForm {
+	private String username;
+	private String password;
+	public JTextField txUser;
+	public JTextField txPassword
+	
+
+	public RegisterForm() {
+		JFrame jf = new JFrame();
+		JPanel jp = new JPanel();
+		jf.getContentPane().add(jp);
+		jf.setTitle("Registro Usuarios");
+		JLabel lbuser = new JLabel();
+		lbuser.setText("Usuario: ");
+		lbuser.setBounds(20, 50, 150, 20);
+		JTextField txuser = new JTextField();
+		//txuser.setText("Usuario: ");
+		txuser.setBounds(100, 50, 150, 20);
+		
+		JLabel lbpassword = new JLabel();
+		lbpassword.setText("Password: ");
+		lbpassword.setBounds(20, 100, 150, 20);
+		JTextField txPassword = new JTextField();
+		//txpassword.setText("Password: ");
+		txPassword.setBounds(100, 100, 150, 20);
+		
+		JButton btnRegister = new JButton();
+		btnRegister.setText("Registrar Usuario");
+		btnRegister.setBounds(60, 150, 200, 30);
+		
+		
+		jp.add(lbuser);
+		jp.add(txuser);
+		jp.add(lbpassword);
+		jp.add(txPassword);
+		jp.add(btnRegister);
+		jf.setLocation(400, 400);
+		jf.setLayout(null);
+		jf.setSize(400, 400);
+		
+		jf.setVisible(true);
+	}
+	
+	private void Register(String username, String password) {
+		this.username = setUsername(txUser.getText());
+		
+	}
+
+	
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+	
+	
+	
+
+	
+	
+}

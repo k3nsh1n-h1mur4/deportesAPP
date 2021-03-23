@@ -14,15 +14,20 @@ import javax.swing.JLabel;
 
 
 
-public class example{
+public class example {
+	public String username;
+	public String password;
 	
-	private static String username;
-	private static String password;
 	
 	public static void main(String[] args) throws ClassNotFoundException {
 		
+		MainMenu mm = new MainMenu();
+		
+		
+		
+		
 		// TODO Auto-generated method stub
-		JFrame jf = new JFrame("LogIn");
+		/*JFrame jf = new JFrame("LogIn");
 		JLabel lbusername = new JLabel();
 		lbusername.setText("Username: ");
 		lbusername.setBounds(20, 50, 150, 20);
@@ -36,11 +41,13 @@ public class example{
 		txPassword.setBounds(100, 100, 150, 20);
 		JButton btn = new JButton();
 		btn.setText("Entrar");
-		btn.setBounds(60, 150, 80, 30);
+		btn.setBounds(60, 150, 80, 30);*/
 		
+		//Login lg = new Login();
+		//lg.LogIn("isaac", "k0rn82...");
 		
 
-		ActionListener al = new ActionListener() {
+		/*ActionListener al = new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -77,10 +84,10 @@ public class example{
 			
 		};
 		
-		btn.addActionListener(al);
+		btn.addActionListener(al);*/
 		
 		
-		jf.add(lbusername);
+		/*jf.add(lbusername);
 		jf.add(txUsername);
 		jf.add(lbpassword);
 		jf.add(txPassword);
@@ -88,8 +95,8 @@ public class example{
 		jf.setSize(400, 400);
 		jf.setLayout(null);
 		jf.setVisible(true);
-		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		RegisterForm rf = new RegisterForm();
+		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);*/
+		//RegisterForm rf = new RegisterForm();
 		
 
 	}
